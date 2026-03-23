@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Walksies</title>
+    <link rel="stylesheet" href="styles.css?v=rollback5" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <header class="hud">
+          <div class="hud-group">
+            <span class="hud-label">Mode</span>
+            <strong id="modeLabel">Menu</strong>
+          </div>
+          <div class="hud-group">
+            <span class="hud-label">Dog</span>
+            <strong id="dogScore">0</strong>
+          </div>
+          <div class="hud-group">
+            <span class="hud-label">Owner</span>
+            <strong id="ownerScore">0</strong>
+          </div>
+          <div class="hud-group">
+            <span class="hud-label">Time Left</span>
+            <strong id="timeLeft">0:00</strong>
+          </div>
+          <div class="hud-group anger-group">
+            <span class="hud-label" id="angerLabel">Anger</span>
+            <div class="meter">
+              <div id="angerFill" class="meter-fill"></div>
+            </div>
+          </div>
+        </header>
+
+        <section class="stage-shell">
+          <canvas
+            id="gameCanvas"
+            width="960"
+            height="640"
+            aria-label="Walksies game board"
+          ></canvas>
+
+          <div id="menuOverlay" class="overlay">
+            <div class="card">
+              <p class="eyebrow">Arcade sidewalk scramble</p>
+              <h1>Walksies</h1>
+              <p class="lead">
+                Bright, bouncy, and a little chaotic: dog and human want very different things on the same walk.
+              </p>
+              <div class="button-stack">
+                <button data-mode="dogSolo">Dog Solo</button>
+                <button data-mode="ownerSolo">Owner Solo</button>
+                <button data-mode="twoPlayer">Two Player</button>
+              </div>
+              <div class="legend">
+                <p><span class="chip dog"></span> Dog icons: sniff spots are quick bonus pauses, plus bones and friendly pups</p>
+                <p><span class="chip owner"></span> Owner icons: cash bills, neighbor chats, and progress home</p>
+                <p><span class="chip bad"></span> Hazards: chocolate and owner stop-offs that cost you time</p>
+              </div>
+              <p class="controls">
+                Solo: Arrow keys move the player. Two-player: owner uses arrow keys, dog uses
+                WASD. Press <kbd>R</kbd> to restart and <kbd>P</kbd> to pause.
+              </p>
+            </div>
+          </div>
+
+          <div id="resultOverlay" class="overlay hidden">
+            <div class="card">
+              <p class="eyebrow">Round over</p>
+              <h2 id="resultTitle">Walk complete</h2>
+              <p id="resultReason" class="lead"></p>
+              <div class="results">
+                <div id="resultDogBlock">
+                  <span class="hud-label" id="resultDogLabel">Dog final</span>
+                  <strong id="resultDogScore">0</strong>
+                </div>
+                <div id="resultOwnerBlock">
+                  <span class="hud-label" id="resultOwnerLabel">Owner final</span>
+                  <strong id="resultOwnerScore">0</strong>
+                </div>
+              </div>
+              <div class="button-stack compact">
+                <button id="playAgainButton">Play Again</button>
+                <button id="menuButton" class="secondary">Back to Menu</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="status-row">
+          <p id="statusText">Choose a mode to begin.</p>
+          <p>Follow the bright winding path, dodge playful clutter, and make it home.</p>
+        </footer>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js?v=rollback5"></script>
+  </body>
+</html>
