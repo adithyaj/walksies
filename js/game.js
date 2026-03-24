@@ -111,6 +111,11 @@ export class Game {
       if (this.keys.has("w")) y -= 1;
       if (this.keys.has("s")) y += 1;
     } else {
+      const allowWasd = this.state.mode !== "twoPlayer";
+      if (allowWasd && this.keys.has("a")) x -= 1;
+      if (allowWasd && this.keys.has("d")) x += 1;
+      if (allowWasd && this.keys.has("w")) y -= 1;
+      if (allowWasd && this.keys.has("s")) y += 1;
       if (this.keys.has("ArrowLeft")) x -= 1;
       if (this.keys.has("ArrowRight")) x += 1;
       if (this.keys.has("ArrowUp")) y -= 1;

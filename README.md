@@ -7,8 +7,8 @@ A small browser prototype about a dog and owner fighting the leash while chasing
 - From this folder run `python3 -m http.server 8000` and visit `http://localhost:8000`
 
 ## Controls
-- Dog solo: arrow keys
-- Owner solo: arrow keys
+- Dog solo: arrow keys or `WASD`
+- Owner solo: arrow keys or `WASD`
 - Two-player:
   - Owner: arrow keys
   - Dog: `WASD`
